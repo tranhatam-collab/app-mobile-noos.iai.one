@@ -1,9 +1,3 @@
-Dưới đây là README.md hoàn chỉnh – FINAL, đúng chuẩn để đặt ở root repo và dùng ngay cho DEV + AI. Không thiếu phần nào, đã tối ưu để vừa kỹ thuật, vừa định hướng hệ thống cấp toàn cầu.
-
-⸻
-
-:::writing{variant=“standard” id=“48192”}
-
 🚀 NOOS Civilization OS
 
 Language-Aware Civilization Operating System
