@@ -17,7 +17,7 @@ NOOS là:
 Lớp điều phối toàn bộ thực tại có thể hiểu được
 (The Universal Coordination Layer for Understandable Reality)
 
-Từ 2026 → 3026, NOOS hướng tới:
+Từ 2026 trở đi, NOOS hướng tới:
 	•	Trái Đất như một hệ sinh thái sống thông minh
 	•	Hạ tầng tự vận hành, tự tối ưu
 	•	Con người + AI + môi trường hợp nhất
