@@ -1,4 +1,4 @@
-🚀 NOOS MASTER SYSTEM SPEC — FINAL (24/03/2026)
+🚀 NOOS MASTER SYSTEM SPEC — FINAL (25/03/2026)
 
 NOOS Civilization OS
 
@@ -75,21 +75,28 @@ IV. LANGUAGE ENGINE (NUL)
 
 2. Semantic Layer
 
-Mỗi concept:
+Mọi concept → 1 MeaningID vĩnh cửu
 
+Ví dụ:
 MeaningID: concept:safe_housing_001
 
-Relations:
-	•	is-a
-	•	part-of
-	•	cause-effect
-	•	cultural variation
+Global Meaning Graph:
+	•	RDF / OWL + neurosymbolic rules
+	•	Graph DB (quan hệ: is-a / part-of / cause-effect / cultural variation)
+	•	Vector DB (embedding index)
 
-Tech:
-	•	RDF / OWL
-	•	Graph DB
-	•	Vector DB
-	•	Neurosymbolic AI
+Contextual disambiguation + cultural/emotional valence:
+	•	gỡ mơ hồ theo ngữ cảnh (multi-language)
+	•	detect tone / meaning drift theo văn hoá & cảm xúc
+
+Dynamic update:
+	•	khi nhân loại tạo concept mới → Meaning Graph update theo versioned mapping
+
+BCI trong NUL:
+	•	Thought → trực tiếp decode thành Semantic Object + Intent
+	•	Neural Consent: xác nhận ý thức trước khi execute
+	•	Feedback loop hai chiều: NOOS gửi cảm nhận ngược qua BCI
+	•	Quyền ngắt kết nối & veto đạo đức 100% (human sovereignty ưu tiên tuyệt đối)
 
 ⸻
 
@@ -116,10 +123,9 @@ Chạy trên FLOW
 
 FILES
 
-/core/language-engine/
-  semantic-graph.ts
-  intent-parser.ts
-  context-engine.ts
+/noos/language-engine/
+  semantic-graph.ts      (Semantic Graph + BCI stub)
+  intent-parser.ts       (Intent Layer stub)
 
 
 ⸻
@@ -177,17 +183,23 @@ IX. SUPER MAP SYSTEM
 
 /map-system/
 
-10 LỚP MAP
-	1.	Life
-	2.	Asset
-	3.	Infrastructure
-	4.	Energy
-	5.	Knowledge
-	6.	Risk
-	7.	Future
-	8.	Governance
-	9.	Trust
-	10.	Mission
+7–10 LỚP FRACTAL (có thể mở rộng Governance/Trust/Mission)
+	1.	Life Map
+	2.	Asset Map
+	3.	Infrastructure Map
+	4.	Energy Map
+	5.	Knowledge Map
+	6.	Risk Map
+	7.	Future Map
+	8.	Governance Map (optional)
+	9.	Trust Map (optional)
+	10.	Mission Map (optional)
+
+Zoom fractal:
+	•	1 người → Trạng thái twin local
+	•	→ gia đình / cộng đồng → cụm thành phố
+	•	→ Trái Đất → Hệ Mặt Trời
+	•	→ 1000 năm (bản đồ mô phỏng / evidence playback)
 
 ⸻
 
@@ -195,12 +207,14 @@ X. SUPER APP
 
 UI CORE
 
-Ask NOOS...
+Input duy nhất: “Ask NOOS…”
+	•	text / voice / camera / sensor
+	•	BCI thought (stub sẵn sàng cho hardware sau)
 
 MODULES
 	1.	Identity
 	2.	AI Companion
-	3.	Search
+	3.	Universal Search
 	4.	Flow
 	5.	Twin
 	6.	Map
@@ -316,41 +330,34 @@ XVII. DEVICE PRIORITY (2026–2030)
 
 ⸻
 
-XVIII. BUILD ORDER
+XVIII. BUILD ORDER (Ưu tiên HOÀN THIỆN WEB trước → Mobile ngay sau)
 
-PHASE 1
+GIAI ĐOẠN 1 (1–2 tuần tới) — HOÀN THIỆN WEB
+	•	Update https://noos.iai.one/docs/civilization-os/ với bản FINAL mới nhất
+	  (đã có Semantic Layer + BCI chi tiết)
+	•	Implement Language Engine + Semantic Graph trên web trước để test
+	•	Chốt API contracts dùng chung cho web và mobile:
+	  /parse, /flow/run, /twin, /map, /consent
 
-Language + Flow + Trust
-
-PHASE 2
-
-Map + Twin
-
-PHASE 3
-
-Super App
-
-PHASE 4
-
-Device
+GIAI ĐOẠN 2 — APP MOBILE (repo này) (sau khi web ổn)
+	•	Kết nối mobile với backend NOOS bằng cùng contracts
+	•	Implement 9 modules + Super Map fractal + BCI stub (ready cho phần cứng sau)
+	•	Test: Offline mode, Mars latency simulation, rollback, neural consent
 
 ⸻
 
-XIX. ROADMAP
+XIX. ROADMAP (triết lý horizon)
+	•	Giữ horizon 2026 → 3026.
+	•	Web/App không hiển thị mốc thời gian dạng “cột móc”; timeline chỉ tồn tại trong evidence playback và mô phỏng.
 
-2026–2036
-
-Deploy system
-
-2036–2126
-
-Scale planetary
-
-2126–3026
-
-Frontier
-
-⸻
+YÊU CẦU DEV NGAY HÔM NAY
+	1.	Tạo branch `feature/nul-semantic-bci` từ `main`.
+	2.	Update spec này (đang chốt theo bản bạn gửi).
+	3.	Implement Semantic Layer + BCI input stub trong `/noos/language-engine/`
+	   (semantic-graph.ts, intent-parser.ts).
+	4.	Sau khi web publish xong → sync và build mobile UI:
+	   1 thanh input “Ask NOOS…” + Super Map.
+	5.	Mở issue theo dõi tiến độ hàng tuần (không thêm screen mới nếu chưa chốt contracts).
 
 XX. CHUẨN 1000 NĂM
 
