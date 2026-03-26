@@ -1,7 +1,7 @@
 import { NavigationContainer, DefaultTheme } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import { Ionicons } from "@expo/vector-icons";
+import { Text } from "react-native";
 import { HomeScreen } from "../screens/HomeScreen";
 import { ModulesScreen } from "../screens/ModulesScreen";
 import { ModuleDetailScreen } from "../screens/ModuleDetailScreen";
@@ -27,6 +27,21 @@ const navTheme = {
 
 const Stack = createNativeStackNavigator<ModulesStackParamList>();
 const Tab = createBottomTabNavigator<RootTabParamList>();
+
+function TabGlyph({ text, color, size }: { text: string; color: string; size: number }) {
+  return (
+    <Text
+      style={{
+        color,
+        fontSize: Math.max(10, Math.round(size * 0.52)),
+        fontWeight: "800",
+        letterSpacing: 0.2,
+      }}
+    >
+      {text}
+    </Text>
+  );
+}
 
 function ModulesStackScreen() {
   return (
@@ -80,7 +95,7 @@ export function RootNavigator() {
             title: "Trang chủ",
             headerShown: false,
             tabBarIcon: ({ color, size }) => (
-              <Ionicons name="home-outline" color={color} size={size} />
+              <TabGlyph text="H" color={color} size={size} />
             ),
           }}
         />
@@ -91,7 +106,7 @@ export function RootNavigator() {
             headerShown: false,
             title: "Module",
             tabBarIcon: ({ color, size }) => (
-              <Ionicons name="grid-outline" color={color} size={size} />
+              <TabGlyph text="M" color={color} size={size} />
             ),
           }}
         />
@@ -102,7 +117,7 @@ export function RootNavigator() {
             title: "Flow",
             headerShown: false,
             tabBarIcon: ({ color, size }) => (
-              <Ionicons name="git-branch-outline" color={color} size={size} />
+              <TabGlyph text="F" color={color} size={size} />
             ),
           }}
         />
@@ -113,7 +128,7 @@ export function RootNavigator() {
             title: "Hồ sơ",
             headerShown: false,
             tabBarIcon: ({ color, size }) => (
-              <Ionicons name="person-circle-outline" color={color} size={size} />
+              <TabGlyph text="P" color={color} size={size} />
             ),
           }}
         />
